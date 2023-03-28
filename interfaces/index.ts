@@ -35,4 +35,5 @@ export interface SourceModal {
   sourceName?: string;
   source?: Source;
   onSubmit: (source: Source) => void;
+  onDeleteSource: (sourceId: number) => void;
 }
