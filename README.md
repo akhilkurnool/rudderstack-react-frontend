@@ -2,6 +2,8 @@ This is front end for Rudderstack assignment. **Note: Need to run [backend](http
 
 ## Getting Started
 
+Prerequisites: Install `nodejs`. You can follow the offical [guide](https://nodejs.org/en/download) or use `nvm`
+
 Clone the repository and run. *Supported OS: Mac and linux(Ubuntu)* 
 ```bash
 npm install
