@@ -21,11 +21,12 @@ interface InputProps {
 export function SelectField(props: InputProps) {
   const { label, value, isRequired, errorMessage, onChange, placeholder } = props;
   return (
-    <FormControl mb="1rem" isRequired={isRequired}>
+    <FormControl onChange={onChange} mb="1rem" isRequired={isRequired}>
       <FormLabel>{label}</FormLabel>
-      <Select >
+      <Select value={value} >
+        <option disabled selected value=''>-- select an option -- </option>
         {props.options.map((option) => (
-          <option value={option.value}>{option.label}</option>
+          <option key={option.value} value={option.value}>{option.label}</option>
         ))}
       </Select>
       {errorMessage && (
