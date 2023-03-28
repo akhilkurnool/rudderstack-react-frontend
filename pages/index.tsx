@@ -57,7 +57,7 @@ export default function Home() {
       })
       .catch((error) => {
         toast({
-          title: error.message || 'Something went wrong!',
+          title: error.error || 'Something went wrong!',
           status: 'error',
           isClosable: true,
           position: 'top-right'
@@ -113,7 +113,7 @@ export default function Home() {
           ) : (
             <>
               <Button onClick={() => setSelectedSourceId(-1)} >Add Source</Button>
-              {sources.map((source: { name: string, id: number }) => (
+              {sources?.map((source: { name: string, id: number }) => (
                 <>  
                   <Box key={source.id} mt="1rem">
                     <SourceCard name={source.name} id={source.id} onClick={(id) => setSelectedSourceId(id)} />

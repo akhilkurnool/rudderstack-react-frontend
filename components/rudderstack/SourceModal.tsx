@@ -66,9 +66,6 @@ export function SourceModal(props: SourceModal) {
     onClick: () => props.onSubmit(source)
   }
 
-  console.log('isSubmitDisabled, ', isSubmitDisabled);
-
-  console.log('source?', source);
   return (
     <ModalContainer 
       primaryButton={primaryButton} 

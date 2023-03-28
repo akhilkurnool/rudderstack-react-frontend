@@ -9,7 +9,17 @@ export const request = (url: string, body?: BodyInit, method='GET') => {
     headers: {
       "Content-Type": "application/json"
     }
-  }).then((d) => d.json());
+  })
+  .then(async (d) => {
+    const json = await d.json();
+    if (d.status !== 200) {
+      throw json;
+    }
+    return json
+  })
+  .catch((error) => {
+    throw error
+  });
 }
 
 export const URL = {
@@ -41,7 +51,7 @@ export const createOrUpdateSource = (source: Source) => {
   return request(URL.sources, JSON.stringify(source), method)
     .then((data) => data)
     .catch((error) => {
-      console.error('GET sources failed', error)
+      console.error('CREATE or UPDATE source failed', error)
       throw error;
     });
 }
